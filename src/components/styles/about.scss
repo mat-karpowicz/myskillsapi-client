@@ -1,0 +1,47 @@
+.about {
+	flex: 3;
+	display: flex;
+	justify-content: space-between;
+}
+
+.first {
+	width: 30%;
+
+	.photo {
+		height: 70%;
+		position: absolute;
+		bottom: 0;
+	}
+}
+.second {
+	flex: 4;
+	height: 100%;
+	z-index: 9;
+}
+
+.info {
+	margin-top: 40%;
+	margin-left: 20%;
+	color: white;
+	width: 80%;
+	font-size: 1.1em;
+	letter-spacing: .3em;
+	line-height: 1.9em;
+
+	h2 {
+		margin-top: 5%;
+	}
+}
+
+@media (max-width: 600px) {
+	.about {
+		flex-direction: column-reverse;
+	}
+	.first {
+		display: none;
+	}
+	.info {
+		font-size: .8em;
+		margin: auto;
+	}
+}
