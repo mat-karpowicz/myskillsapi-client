@@ -1,92 +1,116 @@
 .skills-container {
-  flex: 3;
-  display: flex;
-  padding: 3%;
-  flex-wrap: wrap;
+	flex: 3;
+	display: flex;
+	padding: 3%;
+	flex-wrap: wrap;
 }
 .card {
-  height: 280px;
-  width: 200px;
-  padding: 3%;
-  display: flex;
+	height: 280px;
+	width: 200px;
+	padding: 3%;
+	display: flex;
+	margin-left: 15px;
+	flex-direction: column;
 
-  flex-direction: column;
-
-  background-color: #0e1a81;
-  border-radius: 13px;
-  box-shadow: 0.8rem 0 3rem #000;
-  transition: 0.4s ease-out;
-  transition: scale 1s ease-out forwards;
+	background: #172a3a;
+	border-radius: 13px;
+	box-shadow: 0.8rem 0 3rem #000;
+	transition: 0.4s ease-out;
+	transition: scale 1s ease-out forwards;
 }
 
 .card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
-  .card-title,
-  .skill-info {
-    color: rgb(219, 88, 12);
-  }
-  .btn-details {
-    display: block;
-  }
+	transform: translateY(-20px);
+	transition: 0.4s ease-out;
+	.skill-exact,
+	.card-title {
+		color: rgb(219, 88, 12);
+	}
+	.details-btn {
+		border: 1px solid rgb(219, 88, 12);
+	}
 }
 
 .card-title {
-  flex: 1;
-  margin: auto;
-  color: white;
+	flex: 1;
+	margin: auto;
+	color: white;
 }
 
 .card-info {
-  flex: 3;
-}
-.skill {
-  color: white;
-  font-size: 0.7rem;
-  margin-top: 10px;
+	flex: 3;
+	color: white;
 }
 
-.skill-info {
-  color: white;
-  font-size: 1rem;
+.skill-title {
+	letter-spacing: 3px;
+	margin-bottom: 5px;
 }
 
-.btn-details {
-  margin: auto;
-  margin-top: 20%;
-  display: none;
+.skill-exact {
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+	font-size: 1em;
+	margin-left: 10px;
+}
+
+.details-btn {
+	display: block;
+	color: white;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: auto;
+	margin-bottom: 15px;
+	padding: 5px;
+	background: transparent;
 }
 
 @media (max-width: 600px) {
-  .card {
-    margin: auto;
-  }
+	.card {
+		margin: auto;
+	}
+	.content {
+		flex-direction: column;
+	}
 }
 
 .overlay {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 10; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  padding-top: 15%;
+	display: none;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	padding-top: 15%;
 }
 
 .overlay-active {
-  display: block;
-  opacity: 1;
+	display: block;
+	opacity: 1;
 }
 .popup {
-  height: 90%;
-  width: 50%;
-  padding: 3%;
-  margin: auto;
-  background-color: #0e1a81;
-  border-radius: 13px;
-  box-shadow: 0.8rem 0 3rem #000;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	width: 50%;
+	padding: 3%;
+	margin: auto;
+	background: linear-gradient(180deg, #152a44 -15.61%, #4047da 151.53%);
+	border-radius: 13px;
+
+	.projects-title {
+		color: rgb(219, 88, 12);
+		margin: auto;
+		text-align: center;
+	}
+	.content-container {
+		.content {
+			margin-bottom: 15px;
+		}
+	}
 }
