@@ -10,7 +10,7 @@ function App() {
   console.log(skills);
 
   return (
-    <div className="App">
+    <div className="App" id="app">
       <Navigation />
       <main className="main">
         <SearchModule setSkills={setSkills} />
