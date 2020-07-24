@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./styles/navigation.scss";
 import mePhoto from "../assets/mePhoto.png";
 import logo from "../assets/logo-small.png";
@@ -7,7 +8,7 @@ function Navigation() {
   return (
     <nav className="nav">
       <div className="nav-header">
-        <img src={logo} alt="" className="logo" />
+        <img src={logo} alt="of me" className="logo" />
         <h4 className="title">
           <a href="/" className="home">
             MySkills API
@@ -23,19 +24,20 @@ function Navigation() {
           </label>
         </div>
         <div className="nav-links unactive" id="nav-links">
-          <a href="#" target="_blank">
-            About
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            Contact
           </a>
-          <a href="#" target="_blank">
-            mk.dev()
-          </a>
-          <a href="#" target="_blank">
+          <a
+            href="https://github.com/mat-karpowicz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Github
           </a>
-          <a href="#" target="_blank">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <img className="photo-me" src={mePhoto} alt="photo of me" />
+          <img className="photo-me" src={mePhoto} alt="of me" />
         </div>
       </div>
     </nav>
@@ -44,15 +46,15 @@ function Navigation() {
 
 function openNav() {
   const navLinks = document.getElementById("nav-links");
-  const app = document.getElementById("app");
+  const appDiv = document.getElementById("app");
 
   navLinks.classList.toggle("active");
   if (navLinks.classList.contains("active")) {
-    app.style.position = "fixed";
-    app.style.overflow = "hidden";
+    appDiv.style.position = "fixed";
+    appDiv.style.overflow = "hidden";
   } else {
-    app.style.position = "unset";
-    app.style.overflow = "auto";
+    appDiv.style.position = "unset";
+    appDiv.style.overflow = "auto";
   }
 }
 

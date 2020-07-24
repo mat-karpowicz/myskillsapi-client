@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles/skill.scss";
 
 export default function Skill(props) {
+  useEffect(() => {
+    const elements = document.getElementsByClassName("type");
+    Array.from(elements).forEach((elem) => {
+      props.showSkills.forEach((type) => {
+        if (elem.textContent === type.id) {
+          if (type.checked === true) {
+            elem.parentElement.parentElement.style.display = "flex";
+          } else {
+            elem.parentElement.parentElement.style.display = "none";
+          }
+        }
+      });
+    });
+  }, [props.showSkills]);
+
   return (
     <div className="skills-container">
       {props.skills.map((skill) => (
@@ -12,9 +27,9 @@ export default function Skill(props) {
             </div>
             <div className="card-info">
               <h4 className="skill-title"> Type:</h4>
-              <h3 className="skill-exact">{skill.type}</h3>
+              <h3 className="skill-exact type">{skill.type}</h3>
               <h4 className="skill-title">Usage:</h4>
-              <h3 className="skill-exact">{skill.usage}</h3>
+              <h3 className="skill-exact type">{skill.usage}</h3>
             </div>
 
             <button onClick={scaleInfo} id="open" className="details-btn">
@@ -36,29 +51,32 @@ export default function Skill(props) {
                       <div className="content-container">
                         <div className="content">
                           <div>
-                            Title:
-                            <h5 className="project-details">{project.title}</h5>
+                            <h4 className="project-header">Title:</h4>
+                            <h5 className="project-details title">
+                              {project.title}
+                            </h5>
                           </div>
                           <div>
-                            Description:
+                            <h4 className="project-header">Description:</h4>
                             <h5 className="project-details">
                               {project.description}
                             </h5>
                           </div>
                           <div>
-                            GitHub:
+                            <h4 className="project-header">GitHub:</h4>
                             <h5 className="project-details">
                               <a href={project.github}> {project.github}</a>
                             </h5>
                           </div>
                           <div>
-                            Live:
+                            <h4 className="project-header">Live:</h4>
                             <h5 className="project-details">
                               <a href={project.live}>{project.live}</a>
                             </h5>
                           </div>
                         </div>
                       </div>
+                      <hr className="hr-line" />
                     </div>
                   ))}
                 </div>

@@ -1,15 +1,19 @@
 .skills-container {
   flex: 3;
   display: flex;
+  justify-content: space-evenly;
   padding: 3%;
   flex-wrap: wrap;
 }
+
 .card {
   height: 280px;
+  min-width: fit-content;
   width: 200px;
   padding: 3%;
   display: flex;
   margin-left: 15px;
+  margin-bottom: 10px;
   flex-direction: column;
 
   background: #172a3a;
@@ -93,6 +97,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  min-width: fit-content;
   width: 50%;
   padding: 3%;
   margin: auto;
@@ -103,6 +108,19 @@
     color: rgb(219, 88, 12);
     margin: auto;
     text-align: center;
+  }
+
+  .project-header {
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .project-details {
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
   .no-projects {
     margin-bottom: 20px;
@@ -122,12 +140,22 @@
     }
   }
 }
+
+.hr-line {
+  margin-bottom: 10px;
+  height: 1px;
+  background-color: rgb(219, 88, 12);
+  border: none;
+}
+
 @media (max-width: 600px) {
   .skills-container {
     justify-content: center;
+    justify-content: space-evenly;
   }
   .card {
     margin: auto;
+    margin-bottom: 10px;
   }
   .content {
     flex-direction: column;

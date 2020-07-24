@@ -17,8 +17,10 @@
       text-decoration: none;
       color: white;
       transition: color 0.5s;
+      outline: none;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: rgb(219, 88, 12);
       }
     }
@@ -117,7 +119,6 @@
     color: white;
     margin-top: 40px;
     margin-left: 25px;
-    text-transform: uppercase;
     position: relative;
 
     &::after {

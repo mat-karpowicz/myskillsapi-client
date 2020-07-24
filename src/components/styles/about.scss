@@ -38,6 +38,13 @@
   text-decoration: underline;
   -webkit-text-decoration-color: rgb(219, 88, 12);
   text-decoration-color: rgb(219, 88, 12);
+  transition: color 0.5s;
+  .safe-link {
+    text-decoration: none;
+  }
+  &:hover {
+    color: rgb(219, 88, 12);
+  }
 }
 
 @media (max-width: 600px) {
@@ -50,5 +57,15 @@
   .info {
     font-size: 0.8em;
     margin: auto;
+  }
+}
+
+@media (max-height: 500px) {
+  .info {
+    font-size: 0.8em;
+  }
+
+  .safe {
+    font: 0.7em;
   }
 }

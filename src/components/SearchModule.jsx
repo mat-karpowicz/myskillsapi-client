@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import Error from "./Error";
+import Loader from "./Loader";
 
 import "./styles/searchModule.scss";
 
 function SearchModule(props) {
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   async function getAllSkills(e) {
     e.preventDefault();
+    setError(false);
+    setLoading(true);
     await fetch("https://myskillsapi-server.herokuapp.com/api/skills")
       .then((response) => response.json())
-      .then((data) => props.setSkills(data))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        setLoading(false);
+        props.setSkills(data);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(true);
+      });
   }
 
   async function getSkillsQuery(e) {
     e.preventDefault();
+    setError(false);
+    setLoading(true);
+
     const skillName = document.getElementById("name").value;
     const skillType = document.getElementById("type").value;
     const skillTag = document.getElementById("tag").value;
@@ -23,7 +39,15 @@ function SearchModule(props) {
     )
       .then((response) => response.json())
       .then((data) => props.setSkills(data))
-      .catch((err) => console.log(err));
+      .then(() => setLoading(false))
+      .catch((err) => setError(true));
+  }
+
+  function switchQueryDisplay(e) {
+    e.preventDefault();
+    setError(false);
+    const element = document.getElementById("query-div");
+    element.classList.toggle("query-shown");
   }
 
   return (
@@ -31,6 +55,7 @@ function SearchModule(props) {
       <button onClick={getAllSkills} className="btn">
         <span className="text">GET all skills</span>
       </button>
+
       <button onClick={switchQueryDisplay} id="query-btn" className="btn">
         <span className="text">GET with query</span>
       </button>
@@ -45,14 +70,10 @@ function SearchModule(props) {
           </button>
         </div>
       </form>
+      {loading === true ? <Loader /> : null}
+      {error === true ? <Error /> : null}
     </div>
   );
-}
-
-function switchQueryDisplay(e) {
-  e.preventDefault();
-  const element = document.getElementById("query-div");
-  element.classList.toggle("query-shown");
 }
 
 export default SearchModule;
