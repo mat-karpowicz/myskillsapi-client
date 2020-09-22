@@ -24,8 +24,8 @@ function Navigation() {
           </label>
         </div>
         <div className="nav-links unactive" id="nav-links">
-          <a href="/" target="_blank" rel="noopener noreferrer">
-            Contact
+          <a href="https://karpowiczm.pl" target="_blank" rel="noopener noreferrer">
+            myWebsite
           </a>
           <a
             href="https://github.com/mat-karpowicz"
@@ -34,7 +34,7 @@ function Navigation() {
           >
             Github
           </a>
-          <a href="/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/karpowiczm/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
           <img className="photo-me" src={mePhoto} alt="of me" />
