@@ -38,7 +38,7 @@ export default function Skill(props) {
           </div>
           <div className="overlay">
             <div className="popup">
-              {skill.projects == 0 ? (
+              {skill.projects === 0 ? (
                 <h1 className="projects-title no-projects">
                   No Projects Yet - Stay Tuned
                 </h1>
